@@ -34,6 +34,7 @@ jobs:
           name: test report
           path: test.json
   report:
+    needs: test
     if: ${{ failure() }}
     runs-on: ubuntu-latest
     steps:
