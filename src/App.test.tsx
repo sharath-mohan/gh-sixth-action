@@ -5,8 +5,6 @@ import { describe, it, expect } from "vitest"; // Explicitly import if globals a
 describe("App Component", () => {
   it("renders the welcome message", () => {
     render(<App />);
-    expect(
-      screen.getByText("https://swapi.dev/api/people")
-    ).toBeInTheDocument();
+    expect(screen.getByText("App")).toBeInTheDocument();
   });
 });

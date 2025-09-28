@@ -1,5 +1,5 @@
 function App() {
-  return <div>{import.meta.env.VITE_API_URI}</div>;
+  return <div>App</div>;
 }
 
 export default App;
