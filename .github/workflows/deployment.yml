@@ -26,9 +26,10 @@ jobs:
         run: pnpm install
       - name: test the project
         run: pnpm run test
+        id: test
       - name: Upload test results
-        if:
+        if: ${{ steps.test.outcome == 'failure'}}
         uses: actions/upload-artifact@v4
         with:
-          name: test.json
+          name: test report
           path: test.json
