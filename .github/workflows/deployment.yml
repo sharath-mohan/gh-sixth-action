@@ -28,7 +28,7 @@ jobs:
         run: pnpm run test
         id: test
       - name: Upload test results
-        if: ${{ steps.test.outcome == 'failure'}}
+        if: ${{ steps.test.outcome == 'failure' }} && ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
           name: test report
