@@ -25,6 +25,7 @@ jobs:
       - name: Lint the project
         run: pnpm run lint
   test:
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
