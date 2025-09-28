@@ -33,3 +33,13 @@ jobs:
         with:
           name: test report
           path: test.json
+  report:
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download test report
+        uses: actions/download-artifact@v5
+        with:
+          name: test report
+      - name: Display test report
+        run: cat test.json
