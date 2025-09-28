@@ -27,9 +27,6 @@ jobs:
   test:
     needs: lint
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22]
     steps:
       - name: Clone Project
         uses: actions/checkout@v5
